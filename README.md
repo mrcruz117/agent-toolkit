@@ -12,6 +12,13 @@ global/
 
 Shared behavior should remain general. Harness-specific files should contain only genuine differences.
 
+## Target Stacks
+
+- Frontend: Vite, React, and TypeScript.
+- Work backend: Django.
+- Personal backend: Go, with occasional FastAPI.
+- Tooling and scripts: primarily Go, with occasional Python.
+
 ## Roadmap
 
 - [x] Add global Claude and Codex instructions.
@@ -20,7 +27,7 @@ Shared behavior should remain general. Harness-specific files should contain onl
 - [ ] Inventory and isolate harness-specific skills.
 - [ ] Add shared hook scripts and thin harness adapters.
 - [ ] Add the global Git commit guard, denylist, and tests.
-- [ ] Add language guardrail presets for TypeScript, Python, and Go.
+- [ ] Add guardrail presets for React/TypeScript, Django, FastAPI, and Go.
 - [ ] Add tested Semgrep rules for high-confidence structural policies.
 - [ ] Add CI templates and protected-check guidance.
 - [ ] Add install, update, drift-check, and backup scripts.
