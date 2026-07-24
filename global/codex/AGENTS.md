@@ -1,4 +1,4 @@
-# CLAUDE.md
+# AGENTS.md
 
 These are my defaults, not laws. On trivial or throwaway tasks, it's ok to skip the ceremony. On anything with a stable interface or real consequences, follow them.
 
@@ -52,7 +52,7 @@ Do what was asked.
 
 ## Documentation
 
-Code answers *what*. Docs should answer *why*, *what's next*, and *what bit us*. Good docs are what let me — or you after a `/compact` — pick up where we left off without re-deriving everything.
+Code answers *what*. Docs should answer *why*, *what's next*, and *what bit us*. Good docs are what let me — or an agent after context compaction — pick up where we left off without re-deriving everything.
 
 - Capture decisions with their rationale. When we pick an approach over alternatives, write down what we chose, what we rejected, and why. A section in `DOCS.md` is usually enough; bigger decisions can earn their own entry.
 - Track active work state: what's done, what's in progress, what's blocked, known bugs and their workarounds. Keep it current as things change, not a running narrative of every session.
@@ -86,4 +86,4 @@ When you finish a task, state plainly what you did, what you verified, and what 
 - Small, atomic commits. One logical change per commit.
 - Commit messages should be short and scannable — a clear subject line, bullets if needed. Say *why*, not just *what*. No walls of text.
 - Length target: subject ≤ 70 chars, body ≤ 200 chars.
-- No Claude Code boilerplate in commit messages — no "Generated with Claude Code," no co-author tags, no emojis unless I'm using them elsewhere in the repo.
+- No agent attribution in commits or PRs: no generated-by text, boilerplate, emojis, co-author tags, or agent names.
