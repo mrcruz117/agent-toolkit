@@ -1,0 +1,34 @@
+#!/bin/sh
+
+HOOK_DIR=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+DENYLIST="$HOOK_DIR/never-commit.txt"
+
+if [ ! -f "$DENYLIST" ]; then
+    echo "pre-commit guard WARNING: denylist missing ($DENYLIST) - skipping." >&2
+    exit 0
+fi
+
+staged=$(git diff --cached --name-only --diff-filter=ACMR)
+[ -z "$staged" ] && exit 0
+
+violations=0
+OLDIFS=$IFS
+IFS='
+'
+for file in $staged; do
+    match=$(git -c core.excludesFile="$DENYLIST" check-ignore --no-index -v -- "$file" 2>/dev/null)
+    [ -z "$match" ] && continue
+
+    case "$match" in
+        *never-commit.txt*) reason="on the never-commit denylist" ;;
+        *) reason="force-added past .gitignore" ;;
+    esac
+
+    echo "BLOCKED by the global pre-commit guard: '$file' is $reason." >&2
+    echo "    Fix: git restore --staged \"$file\"" >&2
+    violations=$((violations + 1))
+done
+IFS=$OLDIFS
+
+[ "$violations" -gt 0 ] && exit 1
+exit 0

@@ -1,0 +1,2 @@
+git/commit-guard/pre-commit text eol=lf
+git/commit-guard/tests/*.sh text eol=lf

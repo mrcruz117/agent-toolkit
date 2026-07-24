@@ -11,9 +11,25 @@ global/
 skills/
   plan-tasks/
   reorient/
+git/
+  commit-guard/
 ```
 
 Shared behavior should remain general. Harness-specific files should contain only genuine differences.
+
+## Git Commit Guard
+
+Install or update the global guard:
+
+```powershell
+.\git\commit-guard\install.ps1
+```
+
+Run its isolated and real-commit tests:
+
+```powershell
+.\git\commit-guard\tests\run.ps1
+```
 
 ## Target Stacks
 
@@ -29,7 +45,7 @@ Shared behavior should remain general. Harness-specific files should contain onl
 - [x] Add shared global skills.
 - [ ] Inventory and isolate harness-specific skills.
 - [ ] Add shared hook scripts and thin harness adapters.
-- [ ] Add the global Git commit guard, denylist, and tests.
+- [x] Add the global Git commit guard, denylist, and tests.
 - [ ] Add guardrail presets for React/TypeScript, Django, FastAPI, and Go.
 - [ ] Add tested Semgrep rules for high-confidence structural policies.
 - [ ] Add CI templates and protected-check guidance.
