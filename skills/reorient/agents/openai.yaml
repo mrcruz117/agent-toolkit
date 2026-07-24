@@ -1,0 +1,7 @@
+interface:
+  display_name: "reorient"
+  short_description: "Rebuild repo context from files"
+  default_prompt: "Use $reorient to rebuild context for this repository."
+
+policy:
+  allow_implicit_invocation: true

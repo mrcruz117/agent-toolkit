@@ -1,0 +1,7 @@
+interface:
+  display_name: "plan-tasks"
+  short_description: "Make a verifier-bound task plan"
+  default_prompt: "Use $plan-tasks to turn the current plan into verifier-bound tasks."
+
+policy:
+  allow_implicit_invocation: true

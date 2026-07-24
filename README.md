@@ -8,6 +8,9 @@ Source of truth for personal agent tooling across devices and coding harnesses.
 global/
   claude/CLAUDE.md
   codex/AGENTS.md
+skills/
+  plan-tasks/
+  reorient/
 ```
 
 Shared behavior should remain general. Harness-specific files should contain only genuine differences.
@@ -23,7 +26,7 @@ Shared behavior should remain general. Harness-specific files should contain onl
 
 - [x] Add global Claude and Codex instructions.
 - [x] Remove Claude-specific language from Codex instructions.
-- [ ] Add shared global skills.
+- [x] Add shared global skills.
 - [ ] Inventory and isolate harness-specific skills.
 - [ ] Add shared hook scripts and thin harness adapters.
 - [ ] Add the global Git commit guard, denylist, and tests.
