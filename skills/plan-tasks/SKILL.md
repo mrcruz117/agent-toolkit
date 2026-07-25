@@ -1,6 +1,7 @@
 ---
 name: "plan-tasks"
 description: "Turn an agreed plan into a loop-grade implementation spec with discrete checkboxes and real verifier commands. Use when the user asks to plan tasks, make a loop-grade plan, prepare goal-mode work, convert brainstorming into executable steps, or run the planning stage before /goal."
+disable-model-invocation: true
 ---
 
 # plan-tasks

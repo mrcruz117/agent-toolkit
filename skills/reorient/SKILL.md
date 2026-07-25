@@ -1,6 +1,7 @@
 ---
 name: "reorient"
 description: "Rebuild file-grounded repository context before new work. Use when the user asks to reorient, get bearings, refresh context, continue after compaction, recover after context loss, inspect what is going on, or start an explore stage before planning."
+disable-model-invocation: true
 ---
 
 # reorient

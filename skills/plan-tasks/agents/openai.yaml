@@ -4,4 +4,4 @@ interface:
   default_prompt: "Use $plan-tasks to turn the current plan into verifier-bound tasks."
 
 policy:
-  allow_implicit_invocation: true
+  allow_implicit_invocation: false

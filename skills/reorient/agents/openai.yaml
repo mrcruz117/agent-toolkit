@@ -4,4 +4,4 @@ interface:
   default_prompt: "Use $reorient to rebuild context for this repository."
 
 policy:
-  allow_implicit_invocation: true
+  allow_implicit_invocation: false
