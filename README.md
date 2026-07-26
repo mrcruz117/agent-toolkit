@@ -61,6 +61,7 @@ Run its isolated and real-commit tests:
 - [x] Inventory and isolate harness-specific skills.
 - [ ] Add verifier commands to `setup-skills` so plans bind to real gates.
 - [ ] Add a `ship` skill (push, PR with `Closes #N`, auto-merge) once needed.
+- [ ] Maybe: symlink installer for `skills/` so the repo is the live copy. Copying works for now.
 - [ ] Add shared hook scripts and thin harness adapters.
 - [x] Add the global Git commit guard, denylist, and tests.
 - [ ] Add guardrail presets for React/TypeScript, Django, FastAPI, and Go.
