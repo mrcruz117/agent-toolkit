@@ -23,14 +23,14 @@ All skills are user-invoked only — `disable-model-invocation: true` for Claude
 | Stage | Skills |
 | --- | --- |
 | Explore | `reorient` |
-| Design | `grill-me`, `grill-with-docs`, `grilling`, `domain-modeling`, `prototype` |
+| Design | `grill-me`, `grill-with-docs`, `grilling`, `domain-modeling`, `prototype`, `codebase-design`, `improve-codebase-architecture` |
 | Plan | `to-spec`, `to-tickets`, `plan-tasks`, `triage` |
 | Build | `implement`, `tdd`, `code-review`, `diagnosing-bugs`, `resolving-merge-conflicts` |
 | Meta | `setup-skills`, `handoff`, `writing-great-skills` |
 
 Most originate from [mattpocock/skills](https://github.com/mattpocock/skills) (MIT). `reorient` and `plan-tasks` are mine. Replaced skills move to `skills/deprecated/`.
 
-Run `/setup-skills` once per repo before the others — it records the issue tracker, triage labels, and doc layout under `docs/agents/`.
+Run the `/setup-skills` skill once per repo before the others — it records the issue tracker, triage labels, and doc layout under `docs/agents/`.
 
 ## Git Commit Guard
 
