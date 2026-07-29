@@ -1,0 +1,7 @@
+interface:
+  display_name: "Burn Tickets"
+  short_description: "Work ready tickets one at a time"
+  default_prompt: "Use $burn-tickets to work the ready ticket queue sequentially."
+
+policy:
+  allow_implicit_invocation: false

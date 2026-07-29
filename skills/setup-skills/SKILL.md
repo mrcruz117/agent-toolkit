@@ -60,12 +60,18 @@ The defaults are the five canonical roles, each label string equal to its name: 
 
 Offer **multi-context** — a root `CONTEXT-MAP.md` pointing to per-context `CONTEXT.md` files — only when exploration found monorepo signals. Then confirm which layout they want.
 
+**Section D — Verifiers.** The commands that decide whether work is good. `plan-tasks` and `burn-tickets` read these and will not invent their own.
+
+Find them in the repo — `package.json` scripts, `Makefile`, `pyproject.toml`, `justfile`, and above all the CI workflow, which is the authoritative gate. Propose what you found, one command per role, and say which roles you could not fill.
+
+Record in `docs/agents/verifiers.md` using the seed template. Roles: **full** (the one command CI runs — the gate), **unit**, **integration**, **typecheck**, **lint**. Omit a role rather than guess at it. Note any command that is slow or flaky, since a flaky verifier makes an unattended loop meaningless.
+
 ### 3. Confirm and edit
 
 Show the user a draft of:
 
 - The `## Agent skills` block to add to whichever of `CLAUDE.md` / `AGENTS.md` is being edited (see step 4 for selection rules)
-- The contents of `docs/agents/issue-tracker.md`, `docs/agents/domain.md`, and `docs/agents/triage-labels.md` (the last only when `triage` is installed)
+- The contents of `docs/agents/issue-tracker.md`, `docs/agents/domain.md`, `docs/agents/verifiers.md`, and `docs/agents/triage-labels.md` (the last only when `triage` is installed)
 
 Let them edit before writing.
 
@@ -107,6 +113,7 @@ Then write the docs files using the seed templates in this skill folder as a sta
 - [issue-tracker-local.md](./issue-tracker-local.md) — local-markdown issue tracker
 - [triage-labels.md](./triage-labels.md) — label mapping (only if `triage` is installed)
 - [domain.md](./domain.md) — domain doc consumer rules + layout
+- [verifiers.md](./verifiers.md) — the commands that gate work
 
 For "other" issue trackers, write `docs/agents/issue-tracker.md` from scratch using the user's description.
 
