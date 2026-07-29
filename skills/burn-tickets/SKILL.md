@@ -15,7 +15,7 @@ One subagent per ticket, each with a fresh context. You stay lean so the loop ca
 Invoking this skill authorises the whole loop — spawning subagents, running verifiers, merging to the integration branch, labelling. Do not stop to ask permission for any of it. If something is missing, halt and name it; never interview the user mid-loop.
 
 1. Read `docs/agents/issue-tracker.md` for how to list, label, and read tickets. Missing: halt, tell the user to run `/setup-skills`.
-2. Read the verifier commands from `docs/agents/verifiers.md`. Missing: halt, tell the user to run `/setup-skills`. Do not invent them and do not guess from manifests — an unverified loop is worse than no loop.
+2. Find the command that runs the full test suite — what CI runs, if there is CI. Say which one you picked. If you can't find one, or it doesn't run clean on the integration branch before you start, halt: an unverified loop merges unverified work.
 3. Integration branch is `dev` unless the user named another. Missing: halt.
 4. Ticket cap is 10 unless the user named another.
 
@@ -27,7 +27,7 @@ Repeat until no candidates remain, the cap is hit, or a ticket fails.
 
 2. **Delegate.** Spawn one subagent on a branch off the integration branch. Its whole instruction is to run `/implement` on that one ticket and commit. Tell it to return only: ticket id, branch name, done or failed, and brief reason. Nothing else.
 
-3. **Verify yourself.** Run the verifier commands on the ticket's branch. Exit codes decide. The subagent's report is a claim, not evidence — it does not count.
+3. **Verify yourself.** Run the full test suite on the ticket's branch, plus any command the ticket names. Exit codes decide. The subagent's report is a claim, not evidence — it does not count.
 
 4. **Merge.** On green, merge the branch into the integration branch. On red, stop the loop.
 

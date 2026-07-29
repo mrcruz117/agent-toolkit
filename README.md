@@ -59,7 +59,7 @@ Run its isolated and real-commit tests:
 - [x] Remove Claude-specific language from Codex instructions.
 - [x] Add shared global skills.
 - [x] Inventory and isolate harness-specific skills.
-- [x] Add verifier commands to `setup-skills` so plans bind to real gates.
+- [ ] Maybe: record verifier commands per repo, if "run the full test suite" proves too vague.
 - [ ] Add a `ship` skill (push, PR with `Closes #N`, auto-merge) once needed.
 - [ ] Maybe: symlink installer for `skills/` so the repo is the live copy. Copying works for now.
 - [ ] Add shared hook scripts and thin harness adapters.
