@@ -24,7 +24,7 @@ All skills are user-invoked only — `disable-model-invocation: true` for Claude
 | --- | --- |
 | Explore | `reorient` |
 | Design | `grill-me`, `grill-with-docs`, `grilling`, `domain-modeling`, `prototype`, `codebase-design`, `improve-codebase-architecture` |
-| Plan | `to-spec`, `to-tickets`, `plan-tasks`, `triage` |
+| Plan | `wayfinder`, `to-spec`, `to-tickets`, `plan-tasks`, `triage` |
 | Build | `implement`, `burn-tickets`, `tdd`, `code-review`, `diagnosing-bugs`, `resolving-merge-conflicts` |
 | Meta | `setup-skills`, `handoff`, `writing-great-skills` |
 
