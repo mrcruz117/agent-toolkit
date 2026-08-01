@@ -1,6 +1,6 @@
 # Triage Labels
 
-The skills speak in terms of six canonical triage roles. This file maps those roles to the actual label strings used in this repo's issue tracker.
+The skills speak in terms of seven canonical triage roles. This file maps those roles to the actual label strings used in this repo's issue tracker.
 
 | Canonical role    | Label in our tracker | Meaning                                          |
 | ----------------- | -------------------- | ------------------------------------------------ |
@@ -8,10 +8,13 @@ The skills speak in terms of six canonical triage roles. This file maps those ro
 | `needs-info`      | `needs-info`         | Waiting on reporter for more information         |
 | `ready-for-agent` | `ready-for-agent`    | Fully specified, ready for an AFK agent          |
 | `ready-for-human` | `ready-for-human`    | Requires human implementation                    |
+| `spec`            | `spec`               | A spec to slice into tickets, not work to do     |
 | `staged`          | `staged`             | Built and merged to the integration branch       |
 | `wontfix`         | `wontfix`            | Will not be actioned                             |
 
 When a skill mentions a role (e.g. "apply the AFK-ready triage label"), use the corresponding label string from this table.
+
+`spec` is applied by `to-spec`, not by triage. It marks a document, not a unit of work — `to-tickets` reads it and cuts tickets from it, and `burn-tickets` never picks it up. Do not triage a `spec` issue into a state role.
 
 `staged` is applied by `burn-tickets`, not by triage. It means the work is done and sitting on the integration branch awaiting the pull request to the default branch — which is what finally closes the issue. Do not re-triage a `staged` issue.
 
