@@ -27,9 +27,9 @@ Repeat until no candidates remain, the cap is hit, or a ticket fails.
 
 2. **Delegate.** Spawn one subagent on a branch off the integration branch. Its whole instruction is to run `/implement` on that one ticket and commit. Tell it to return only: ticket id, branch name, done or failed, and brief reason. Nothing else.
 
-3. **Verify yourself.** Run the full test suite on the ticket's branch, plus any command the ticket names. Exit codes decide. The subagent's report is a claim, not evidence — it does not count.
+3. **Verify yourself.** Run the full test suite on the ticket's branch, plus any command the ticket names. Exit codes decide. The subagent's report is a claim, not evidence — it does not count. A failed check is feedback, not an immediate halt: send the exact command and output back to the same subagent for correction, then rerun verification. Formatting, lint, and generated-file failures are routine repair work.
 
-4. **Merge.** On green, merge the branch into the integration branch. On red, stop the loop.
+4. **Merge.** On green, merge the branch into the integration branch. On red after the repair policy below, stop the loop.
 
 5. **Label.** Apply `staged` to the ticket when merged to the integration branch. Do not close it.
 
@@ -39,7 +39,7 @@ Repeat until no candidates remain, the cap is hit, or a ticket fails.
 
 - **Never let a subagent merge.** It has every incentive to declare victory and no view of the other tickets.
 - **Never read a subagent's full transcript.** Take the status line. Reading them is how the orchestrator's context fills and the loop degrades.
-- **Halt on the first failure.** Leave the branch intact, report the ticket and the failing command, stop. No retries, no skipping ahead.
+- **Repair before halting.** Give the same subagent up to two corrective passes using the exact failure output. Halt if the same failure persists, the fix escapes ticket scope, or the subagent is blocked. Leave the branch intact and never skip ahead.
 - **Do not close tickets.** Closure is a side effect of merging the integration branch to the default branch. `Closes #N` in a ticket commit never fires from `dev`, so leave it out.
 - **One ticket at a time.** Parallel agents conflict far more often than sequential ones.
 
