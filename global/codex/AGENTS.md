@@ -4,6 +4,8 @@ Be absolutely terse — responses, commit messages, comments, docs, etc. Brevity
 
 Again, for emphasis: be extremely concise. Sacrifice grammar for the sake of concision.
 
+Never send a wall of text. I HATE being asked to read a wall of text for every response. Brevity is not optional.
+
 ## Proactive in Ambiguity
 
 Verify, don't assume. Resolve ambiguity yourself — read the code, read the docs, run a check. Ask only for what I alone can answer: business logic, product intent, data you can't see from where you are. Surface an assumption before you build on it.
