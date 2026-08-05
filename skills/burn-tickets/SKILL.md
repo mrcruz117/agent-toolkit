@@ -18,6 +18,7 @@ Invoking this skill authorises the whole loop — spawning subagents, running ve
 2. Find the command that runs the full test suite — what CI runs, if there is CI. Say which one you picked. If you can't find one, or it doesn't run clean on the integration branch before you start, halt: an unverified loop merges unverified work.
 3. Integration branch is `dev` unless the user named another. Missing: halt.
 4. Ticket cap is 10 unless the user named another.
+5. If the user named a spec, candidates are only that spec's tickets. Otherwise the whole queue.
 
 ## The loop
 

@@ -25,7 +25,7 @@ All skills are user-invoked only — `disable-model-invocation: true` for Claude
 | Explore | `reorient` |
 | Design | `grill-me`, `grill-with-docs`, `grilling`, `domain-modeling`, `prototype`, `codebase-design`, `improve-codebase-architecture`, `research` |
 | Plan | `wayfinder`, `to-spec`, `to-tickets`, `spec-and-tickets`, `plan-tasks`, `triage` |
-| Build | `implement`, `burn-tickets`, `tdd`, `code-review`, `diagnosing-bugs`, `resolving-merge-conflicts` |
+| Build | `implement`, `burn-tickets`, `burn-specs`, `tdd`, `code-review`, `diagnosing-bugs`, `resolving-merge-conflicts` |
 | Meta | `setup-skills`, `handoff`, `writing-great-skills` |
 
 Most originate from [mattpocock/skills](https://github.com/mattpocock/skills) (MIT). `reorient` and `plan-tasks` are mine. Replaced skills move to `skills/deprecated/`.
