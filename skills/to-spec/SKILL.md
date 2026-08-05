@@ -14,7 +14,7 @@ The issue tracker and triage label vocabulary should have been provided to you â
 
 2. Sketch out the seams at which you're going to test the feature. Existing seams should be preferred to new ones. Use the highest seam possible. If new seams are needed, propose them at the highest point you can. The fewer seams across the codebase, the better - the ideal number is one.
 
-Check with the user that these seams match their expectations.
+Send a subagent to review the seams cold â€” it gets the repo and your proposed seams, not this conversation. Ask it: does a suitable seam already exist that this proposal misses, and is each new seam at the highest point available? Take its answer as input and decide yourself.
 
 3. Write the spec using the template below, then publish it to the project issue tracker. Apply the `spec` label - no need for additional triage. Not `ready-for-agent`: a spec is the source `to-tickets` slices, not a ticket for an agent to implement.
 
