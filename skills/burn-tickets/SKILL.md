@@ -1,6 +1,6 @@
 ---
 name: burn-tickets
-description: Work a queue of ready tickets one at a time — a fresh subagent per ticket via /implement, verified and merged to the integration branch by the orchestrator, labelled staged.
+description: Work a queue of ready tickets one at a time — a fresh subagent per ticket following the implement skill, verified and merged to the integration branch by the orchestrator, labelled staged.
 disable-model-invocation: true
 ---
 
@@ -26,7 +26,7 @@ Repeat until no candidates remain, the cap is hit, or a ticket fails.
 
 1. **Pick.** Candidates are tickets labelled `ready-for-agent` whose every "Blocked by" entry is closed or `staged`. Take the lowest-numbered candidate — FIFO. No candidates means stop, and say why.
 
-2. **Delegate.** Spawn one subagent on a branch off the integration branch. Its whole instruction is to run `/implement` on that one ticket and commit. Tell it to return only: ticket id, branch name, done or failed, and brief reason. Nothing else.
+2. **Delegate.** Spawn one subagent on a branch off the integration branch. Its whole instruction is to read the `implement` skill's SKILL.md, follow it on that one ticket, and commit. Tell it to return only: ticket id, branch name, done or failed, and brief reason. Nothing else.
 
 3. **Verify yourself.** Run the full test suite on the ticket's branch, plus any command the ticket names. Exit codes decide. The subagent's report is a claim, not evidence — it does not count. A failed check is feedback, not an immediate halt: send the exact command and output back to the same subagent for correction, then rerun verification. Formatting, lint, and generated-file failures are routine repair work.
 
@@ -45,5 +45,7 @@ Repeat until no candidates remain, the cap is hit, or a ticket fails.
 - **One ticket at a time.** Parallel agents conflict far more often than sequential ones.
 
 ## When the queue drains
+
+If the run was scoped to one spec, spawn a review subagent: read the `code-review` skill's SKILL.md and follow it on the integration branch, since the commit you started from. Send its findings to one fix subagent, then verify and merge as in the loop.
 
 Report what was staged. Offer to open the integration branch's pull request against the default branch, with a `Closes #N` line per staged ticket so merging it closes them all at once.
