@@ -4,7 +4,7 @@ description: Drain the spec queue — run burn-tickets on one spec at a time unt
 disable-model-invocation: true
 ---
 
-Take the lowest-numbered `spec` issue whose tickets aren't all `staged`. Run the `/burn-tickets` skill on it.
+Take the lowest-numbered `spec` issue whose tickets aren't all `staged`. Read the `burn-tickets` skill's SKILL.md and follow it on that spec.
 
 When it drains green, move to the next spec. When it halts, stop — do not move on.
 

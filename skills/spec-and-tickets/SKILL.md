@@ -4,6 +4,6 @@ description: Run to-spec then to-tickets in one unattended pass — grill output
 disable-model-invocation: true
 ---
 
-Run the `/to-spec` skill, then the `/to-tickets` skill against the spec it published.
+Read the `to-spec` skill's SKILL.md and follow it, then do the same with `to-tickets` against the spec it published.
 
 Neither stops for the user. Run straight through.
