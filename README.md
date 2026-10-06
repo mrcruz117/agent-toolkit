@@ -25,8 +25,8 @@ All skills are user-invoked only — `disable-model-invocation: true` for Claude
 | Explore | `reorient` |
 | Design | `grill-me`, `grill-with-docs`, `grilling`, `domain-modeling`, `prototype`, `codebase-design`, `improve-codebase-architecture`, `research` |
 | Plan | `wayfinder`, `to-spec`, `to-tickets`, `spec-and-tickets`, `triage` |
-| Build | `implement`, `burn-tickets`, `burn-specs`, `tdd`, `code-review`, `diagnosing-bugs`, `resolving-merge-conflicts` |
-| Meta | `setup-skills`, `handoff`, `writing-great-skills` |
+| Build | `implement`, `burn-tickets`, `burn-specs`, `tdd`, `code-review`, `diagnosing-bugs` |
+| Meta | `setup-skills`, `handoff`, `retro`, `writing-great-skills` |
 
 Most originate from [mattpocock/skills](https://github.com/mattpocock/skills) (MIT). `reorient` is mine. Replaced skills move to `skills/deprecated/`.
 
@@ -60,6 +60,7 @@ Run its isolated and real-commit tests:
 - [x] Add shared global skills.
 - [x] Inventory and isolate harness-specific skills.
 - [ ] Maybe: record verifier commands per repo, if "run the full test suite" proves too vague.
+- [ ] Rename `CONTEXT.md` → `GLOSSARY.md` in skills, global instructions, and every repo (upstream did in v1.3).
 - [ ] Add a `ship` skill (push, PR with `Closes #N`, auto-merge) once needed.
 - [ ] Maybe: symlink installer for `skills/` so the repo is the live copy. Copying works for now.
 - [ ] Add shared hook scripts and thin harness adapters.
